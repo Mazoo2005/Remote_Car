@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
+
+html, body {
+  margin: 0; padding: 0; box-sizing: border-box;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(115deg, #1e243a 0 40%, #4a668e 100%);
+  color: #fff;
+  font-family: 'Roboto', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.main-layout {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60px;
+  width: 100vw;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+.video-numbers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.number-btn,
+#bluetoothBtn {
+  background: #25264a;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 46px; height: 46px;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  box-shadow: 0 2px 6px #0002;
+  border: 2px solid #5b2a9d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.number-btn.active,
+.number-btn:focus,
+.number-btn:active {
+  background: #44b36c;
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 0 2px 14px #44b36c44;
+}
+#bluetoothBtn.connected {
+  background: #44b36c;
+  border-color: #fff;
+  color: #fff;
+}
+#bluetoothBtn .material-icons {
+  font-size: 1.6em;
+}
+
+.center-content {
+  flex: 1;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-top: 2.5vh;
+}
+
+.center-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  width: 100%;
+  margin-top: 7vh;
+}
+
+.video-area {
+  width: 52vw;
+  min-width: 300px;
+  max-width: 750px;
+  height: 36vh;
+  min-height: 140px;
+  max-height: 390px;
+  background: #0c1332;
+  border-radius: 17px;
+  box-shadow: 0 2px 18px #0005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-area iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 17px;
+  background: #0c1332;
+  border: none;
+}
+
+.ask-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #23243aee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0002;
+  padding: 10px 24px;
+  min-width: 320px;
+  max-width: 620px;
+  margin: 22px auto 0 auto;
+}
+
+#micBtn {
+  background: #e44444;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 47px;
+  height: 47px;
+  font-size: 1.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+#micBtn.active, #micBtn:active {
+  background: #b83232;
+}
+#micBtn .material-icons {
+  font-size: 2em;
+}
+.ask-bar input[type="text"] {
+  padding: 13px 12px;
+  border-radius: 10px;
+  border: 1px solid #4a668e;
+  font-size: 1.13em;
+  min-width: 120px;
+  flex: 1 1 0;
+  background: #23243a;
+  color: #fff;
+  outline: none;
+}
+.ask-btn {
+  background: #44b36c;
+  color: #fff;
+  border-radius: 11px;
+  border: none;
+  font-size: 1.06em;
+  padding: 10px 21px;
+  transition: background 0.16s;
+  cursor: pointer;
+}
+.ask-btn:active {
+  background: #297c48;
+}
+
+#response {
+  margin: 16px auto 4px auto;
+  background: #1a1b2e;
+  padding: 11px 13px;
+  border-radius: 10px;
+  min-height: 25px;
+  max-width: 480px;
+  font-size: 1.13em;
+  color: #eaf8d7;
+  word-break: break-word;
+  box-shadow: 0 1px 6px #1a1a2a10;
+  text-align: right;
+}
+
+/* حركة الجويستيك */
+.move-controls-absolute {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.move-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  pointer-events: auto;
+}
+.move-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  pointer-events: auto;
+}
+.vertical-left {
+  margin-left: 4vw;
+}
+.horizontal-right {
+  margin-right: 4vw;
+}
+.move-btn {
+  background: #2c5dab;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 16px 19px;
+  font-size: 1.15em;
+  min-width: 55px;
+  min-height: 48px;
+  box-shadow: 0 2px 12px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  cursor: pointer;
+}
+.move-btn:active, .move-btn.hold {
+  background: #15305c;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .video-area { width: 90vw; }
+  .ask-bar { min-width: 90vw; }
+  .vertical-left, .horizontal-right { margin: 0 2vw; }
+  .center-stack { margin-top: 3vh; }
+}
+@media (max-width: 700px) {
+  .move-controls-absolute { bottom: 6vw; }
+  .video-area { width: 98vw; height: 20vh; min-height: 80px; }
+  .ask-bar { min-width: 98vw; padding: 6px 2vw; }
+  .center-stack { margin-top: 0.8vh; }
+  .number-btn, #bluetoothBtn { width: 36px; height: 36px; font-size: 1em; }
+  .move-btn { min-width: 45px; min-height: 38px; font-size: 1em; }
+}

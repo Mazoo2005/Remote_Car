@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Car Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-layout">
+    <!-- Top: Video numbers & Bluetooth button -->
+    <div class="top-bar">
+      <div class="video-numbers">
+        <button class="number-btn" onclick="playVideo(1)">1</button>
+        <button class="number-btn" onclick="playVideo(2)">2</button>
+        <button class="number-btn" onclick="playVideo(3)">3</button>
+        <button class="number-btn" onclick="playVideo(4)">4</button>
+        <button class="number-btn" onclick="playVideo(5)">5</button>
+        <button class="number-btn" onclick="playVideo(6)">6</button>
+        <button class="number-btn" onclick="playVideo(7)">7</button>
+        <button class="number-btn" onclick="playVideo(8)">8</button>
+        <button class="number-btn" onclick="playVideo(9)">9</button>
+        <button class="number-btn" onclick="playVideo(10)">10</button>
+        <button id="bluetoothBtn" title="Bluetooth" onclick="connectBluetooth()">
+          <span class="material-icons">bluetooth</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Center: Video + Ask bar -->
+    <div class="center-content">
+      <div class="center-stack">
+        <div class="video-area">
+          <iframe
+            id="videoFrame"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="ask-bar">
+          <button id="micBtn" title="Speak"><span class="material-icons">mic</span></button>
+          <input type="text" id="question" placeholder="اكتب أو اسأل بالعربي..." autocomplete="off" />
+          <button onclick="askAI()" class="ask-btn">Ask</button>
+        </div>
+        <div id="response"></div>
+      </div>
+      <!-- Movement Controls -->
+      <div class="move-controls-absolute">
+        <div class="move-vertical vertical-left">
+          <button id="forwardBtn" class="move-btn"><span class="material-icons">arrow_upward</span></button>
+          <button id="backwardBtn" class="move-btn"><span class="material-icons">arrow_downward</span></button>
+        </div>
+        <div class="move-horizontal horizontal-right">
+          <button id="leftBtn" class="move-btn"><span class="material-icons">arrow_back</span></button>
+          <button id="rightBtn" class="move-btn"><span class="material-icons">arrow_forward</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
